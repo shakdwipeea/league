@@ -9,7 +9,20 @@ var bodyParser = require('body-parser');
 //var users = require('./routes/users');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/league');
+//mongoose.connect('mongodb://localhost/league');
+app.set('MongodbHost',process.env.OPENSHIFT_MONGODB_DB_HOST || '127.0.0.1');
+app.set('MongodbPort',process.env.OPENSHIFT_MONGODB_DB_PORT || '');
+
+/*{
+*   user:'admin',
+*     pass:'sS7zTAwzYmwY'
+*     }*/
+
+
+mongoose.connect('mongodb://' + app.get('MongodbHost') + ':' + app.get('MongodbPort') + '/blog',{
+    user:'admin',
+  pass:'sS7zTAwzYmwY'
+});
 
 require('./models/players.js');
 

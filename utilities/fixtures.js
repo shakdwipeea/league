@@ -19,7 +19,7 @@ module.exports = function(random) {
       var number2;
       number2 = number1;
       while(number1 === number2)
-        number2 = random[Math.floor(Math.random() * random.length)];
+        number2 = random[Math.floor(Math.random() * random.lengtht )];
       console.log('Here' + random + 'Number1 '+ number1 + 'Number2' + number2);
       random.splice(random.indexOf(number1),1);
       random.splice(random.indexOf(number2),1);
