@@ -1,0 +1,13 @@
+<a ui-sref='add'>Add Player</a>
+<a ui-sref='admin'>Admin</a>
+<div>
+  <div ng-repeat='player in players'>
+    <div>
+      <div>Name: {{player.name}}</div>
+      <div>Matches Played: {{player.matches}}</div>
+      <div>Wins {{player.wins}}</div>
+      <div>Loses {{player.loses}}</div>
+      <div>Streak {{player.history}}</div>
+      <div>Titles {{player.titles}}</div>
+  </div>
+</div>
